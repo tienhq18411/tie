@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <title>Home page</title>
+</head>
+    <center>
+        <h1>TOYS STORE</h1>
+    </center>
+    <div>
+        <a href="">Home</a>
+        <a href="/insert">Add a new Product</a>
+        <a href="">Contact</a>
+    </div>
+        
+<table width='100%'>
+        <tr>
+            <td><b>Name</b></td>
+            <td><b>Color</b></td>
+            <td><b>Price</b></td>
+            <td><b>Delete</b></td>
+        </tr>
+        {{#each model}}
+        <tr>            
+            <td>{{name}}</td>
+            <td>{{color}}</td>
+            <td>{{price}}</td>
+            <td><a href="/delete?id={{_id}}" 
+                onclick="return confirmDelete('{{newProduct}}')">Delete</a></td>
+        </tr>
+        {{/each}}
+</table>
+</body>
+</html>
